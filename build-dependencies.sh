@@ -8,7 +8,7 @@ nghttp2Archive='https://github.com/nghttp2/nghttp2/releases/download/v1.52.0/ngh
 curlArchive='https://github.com/curl/curl/releases/download/curl-7_88_1/curl-7.88.1.tar.xz'
 
 echo -n "Install tools... "
-apt update && apt install tar xz-utils curl cmake make autoconf libtool -y
+sudo apt update && sudo apt install tar xz-utils curl cmake make autoconf libtool -y
 
 echo -n "Create dependencies directory... "
 mkdir dependencies
