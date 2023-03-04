@@ -22,5 +22,6 @@ jobs:
 
     - name: Release
       uses: softprops/action-gh-release@v1
+      if: startsWith(release, 'refs/tags/')
       with:
         files: build/tgb-t
