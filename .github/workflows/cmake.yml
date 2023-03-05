@@ -28,7 +28,7 @@ jobs:
 #      run: /bin/bash build-main.sh
       
     - name: create test file
-      run: cat "Test123" > test.dat 
+      run: echo "hello" >> test.dat
       
     - name: Release
       uses: softprops/action-gh-release@v1
