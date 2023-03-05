@@ -1,8 +1,7 @@
-name: CMake
+name: Release builder
+run-name: Build release ${{ github.ref }}
 
 on:
-  workflow_dispatch:
-  
   push:
     tags:
       - "v*.*.*"
