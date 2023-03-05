@@ -7,11 +7,10 @@ wolfSSLArchive='https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.5.4-stab
 nghttp2Archive='https://github.com/nghttp2/nghttp2/releases/download/v1.52.0/nghttp2-1.52.0.tar.xz'
 curlArchive='https://github.com/curl/curl/releases/download/curl-7_88_1/curl-7.88.1.tar.xz'
 
-echo -n "::group::Install tools... "
+echo -n "Install tools... "
 sudo apt update && sudo apt install tar xz-utils curl cmake make autoconf libtool -y
-echo "::endgroup::"
 
-echo -n "::group::Get latest musl toolchain... "
+echo -n "Get latest musl toolchain... "
 mkdir dependencies
 cd dependencies
 curl -s -L https://musl.cc/x86_64-linux-musl-native.tgz | tar zx
@@ -25,11 +24,10 @@ export CXX=$TOOLCHAIN/bin/x86_64-linux-musl-g++
 export LD=$TOOLCHAIN/bin/ld
 export RANLIB=$TOOLCHAIN/bin/x86_64-linux-musl-gcc-ranlib
 export STRIP=$TOOLCHAIN/bin/strip
-echo "::endgroup::"
 
 
 #zlib
-echo -n "::group::Download and Extract zlib... "
+echo -n "Download and Extract zlib... "
 curl -s -L $zlibArchive | tar --xz -x
 
 echo -n "Configure zlib... "
@@ -42,11 +40,10 @@ make -j$(nproc)
 echo -n "Install zlib... "
 make install 
 cd ..
-echo "::endgroup::"
 
 
 #c-ares
-echo -n "::group::Download and Extract c-ares... "
+echo -n "Download and Extract c-ares... "
 curl -s -L $caresArchive | tar zx
 
 echo -n "Configure c-ares... "
@@ -59,11 +56,10 @@ make -j"$(nproc)"
 echo -n "Install c-ares... "
 make install 
 cd ..
-echo "::endgroup::"
 
 
 #wolfSSL
-echo -n "::group::Download and Extract wolfSSL... "
+echo -n "Download and Extract wolfSSL... "
 curl -s -L $wolfSSLArchive | tar xz
 
 echo -n "Configure wolfSSL... "
@@ -77,11 +73,10 @@ make -j"$(nproc)"
 echo -n "Install wolfSSL... "
 make install 
 cd ..
-echo "::endgroup::"
 
 
 #nghttp2
-echo -n "::group::Download and Extract nghttp2... "
+echo -n "Download and Extract nghttp2... "
 curl -s -L $nghttp2Archive | tar --xz -x
 
 echo -n "Configure nghttp2... "
@@ -94,11 +89,10 @@ make -j"$(nproc)"
 echo -n "Install nghttp2... "
 make install
 cd ..
-echo "::endgroup::"
 
 
 #cURL
-echo -n "::group::Download and Extract curl... "
+echo -n "Download and Extract curl... "
 curl -s -L $curlArchive | tar --xz -x
 
 echo -n "Configure curl... "
@@ -112,7 +106,6 @@ echo -n "Install cURL... "
 make install 
 
 echo -e "\e[32mAll done\e[0m"
-echo "::endgroup::"
 
 
 exit 0
