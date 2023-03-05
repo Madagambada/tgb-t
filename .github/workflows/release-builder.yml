@@ -24,8 +24,8 @@ jobs:
       
     - name: Test tgb-t
       run: |
-              chmod +x build/tgb-t
-              build/tgb-t -v
+          chmod +x build/tgb-t
+          build/tgb-t -v
             
     - name: Release
       uses: softprops/action-gh-release@v1
