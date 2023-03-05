@@ -25,7 +25,7 @@ jobs:
       
     - name: Test tgb-t
       run: |
-              chmmod +x build/tgb-t
+              chmod +x build/tgb-t
               /bin/bash build/tgb-t -v
             
     - name: Release
