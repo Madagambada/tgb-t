@@ -21,11 +21,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Build dependencies
-      #run: /bin/bash build-dependencies.sh
+#    - name: Build dependencies
+#      run: /bin/bash build-dependencies.sh
 
-    - name: Build tgb-t
-      #run: /bin/bash build-main.sh
+#    - name: Build tgb-t
+#      run: /bin/bash build-main.sh
       
     - name: create test file
       run: touch test.dat 
