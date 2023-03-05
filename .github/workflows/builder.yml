@@ -6,10 +6,6 @@ on:
   push:
     tags:
       - "v*.*.*"
-
-env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
   
 permissions:
   contents: write
@@ -21,15 +17,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-#    - name: Build dependencies
-#      run: /bin/bash build-dependencies.sh
+    - name: Build dependencies
+      run: /bin/bash build-dependencies.sh
 
-#    - name: Build tgb-t
-#      run: /bin/bash build-main.sh
-      
-    - name: create test file
-      run: echo "hello" >> test.dat
-      
+    - name: Build tgb-t
+      run: /bin/bash build-main.sh
+            
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
