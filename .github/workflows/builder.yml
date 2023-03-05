@@ -21,7 +21,7 @@ jobs:
       run: /bin/bash build-dependencies.sh
 
     - name: Build tgb-t
-      run: /bin/bash build-main.sh
+      run: /bin/bash build.sh
       
     - name: Test tgb-t
       run: /bin/bash build/tgb-t -v
