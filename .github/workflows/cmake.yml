@@ -28,7 +28,7 @@ jobs:
 #      run: /bin/bash build-main.sh
       
     - name: create test file
-      run: touch test.dat 
+      run: cat "Test123" > test.dat 
       
     - name: Release
       uses: softprops/action-gh-release@v1
