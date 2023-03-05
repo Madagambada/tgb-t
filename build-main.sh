@@ -15,7 +15,7 @@ mkdir build
 cd build
 
 echo -n "Configure tgb... "
-cmake ..
+cmake -DCMAKE_BUILD_TYPE=Release ..
 
 echo -n "Build tgb... "
 make
