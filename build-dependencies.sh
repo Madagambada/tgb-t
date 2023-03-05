@@ -70,7 +70,7 @@ cd wolfssl*
 ./configure --host=x86_64-linux-musl --enable-curl --prefix=$TOOLCHAIN --enable-static --disable-shared --enable-all-crypto --with-libz=$TOOLCHAIN 
 
 echo -n "Build wolfSSL... "
-make
+make -j"$(nproc)" 
 
 echo -n "Install wolfSSL... "
 make install 
