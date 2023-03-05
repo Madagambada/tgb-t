@@ -243,7 +243,7 @@ void qbt() {
 }
 
 int main(int argc, char* argv[]) {
-    std::cout << "Telegram Bot 1.0.0 started\n\n";
+    std::cout << "Telegram Bot 1.0.0\n\n";
     cxxopts::Options options("Telegram Bot 1.0.0", "Sends a telegram message when an update is released.");
 
     options.add_options()
@@ -269,7 +269,7 @@ int main(int argc, char* argv[]) {
     }
 
     if (result.count("version")) {
-        std::cout << "Build with: \n\n" + std::string(curl_version()) + "\nhttplib/" + CPPHTTPLIB_VERSION + "\n\n" << std::endl;
+        std::cout << "Build with: \n" + std::string(curl_version()) + "\nhttplib/" + CPPHTTPLIB_VERSION + "\n" << std::endl;
         return 0;
     }
 
