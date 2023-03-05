@@ -9,5 +9,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -Wextra")
 
 set(LINKING_LIBRARIES "-lcurl -lwolfssl -lz -lcares -lnghttp2")
 
-add_executable (tgb-t main.cpp)
+add_executable (tgb-t telegramBot.cpp)
 target_link_libraries (tgb-t ${LINKING_LIBRARIES} -static)
