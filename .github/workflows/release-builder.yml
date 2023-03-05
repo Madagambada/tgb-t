@@ -1,5 +1,5 @@
 name: Release builder
-run-name: Build release ${{ github.ref }}
+run-name: Build release ${{ github.ref_name }}
 
 on:
   push:
