@@ -189,7 +189,7 @@ void openWrt() {
         return;
     }
 
-    std::string curlData = curlGet("https://github.com/openwrt/openwrt/tags");
+    std::string curlData = curlGet("https://downloads.openwrt.org");
     if (curlData == "curlGet failed") {
         std::cout << "OpenWrt curlGet failed\n";
         return;
